@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ss2-deployment
+  labels:
+    app: ss2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ss2
+  template:
+    metadata:
+      labels:
+        app: ss2
+    spec:
+      containers:
+      - name: ss2-container
+        image: vaishnaviwohlig/ss2
+        ports:
+        - containerPort: 2000
