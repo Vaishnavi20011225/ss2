@@ -7,5 +7,5 @@ app.get('/', (req, res) =>{
    res.send("Suswagatam")
 })
 
-app.listen(2000, console.log("Listening on port " + port));
+app.listen(2000, console.log("Listening on por " + port));
 
