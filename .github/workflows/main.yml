@@ -13,6 +13,7 @@ jobs:
 
      - name: Build and push
        run: |
+               docker login -u vaishnaviwohlig -p Dildosti@2512
                docker build -t vaishnaviwohlig/ss2:${{GITHUB.SHA}} .
                docker push vaishnaviwohlig/ss2:${{GITHUB.SHA}}
 
