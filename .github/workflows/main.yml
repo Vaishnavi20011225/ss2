@@ -13,6 +13,6 @@ jobs:
 
      - name: Build and push
        run: |
-               docker build -t vaishnaviwohlig/ss2 .
-               docker push 
+               docker build -t vaishnaviwohlig/ss2:${{GITHUB.SHA}} .
+               docker push vaishnaviwohlig/ss2:${{GITHUB.SHA}}
 
