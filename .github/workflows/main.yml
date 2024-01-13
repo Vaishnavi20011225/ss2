@@ -3,6 +3,10 @@ on:
   push:
     branches:  
               - "main"
+
+
+env: 
+  GITHUB_TOKEN: ${{ secrets.TOKEN101 }}
 jobs:  
   ss2:
     name: ss2
