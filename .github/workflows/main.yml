@@ -34,6 +34,6 @@ jobs:
                git remote set-url origin https://Vaishnavi20011225:${{ secrets.TOKEN102 }}@github.com/Vaishnavi20011225/ss2.git
                git remote get-url origin
                git branch --show-current
-               git push 
+               git push origin main
                git status
 
