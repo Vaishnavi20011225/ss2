@@ -6,7 +6,7 @@ on:
 
 
 env: 
-  GITHUB_TOKEN: ${{ secrets.TOKEN101 }}
+  GITHUB_TOKEN: ${{ secrets.TOKEN102 }}
   
 jobs:  
   ss2:
@@ -31,7 +31,7 @@ jobs:
                git add .
                git commit -m "image change"
                git status
-               git remote set-url origin https://Vaishnavi20011225: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@github.com/Vaishnavi20011225/ss2.git
+               git remote set-url origin https://Vaishnavi20011225:${{ secrets.TOKEN102 }}@github.com/Vaishnavi20011225/ss2.git
                git remote get-url origin
                git branch --show-current
                git push 
