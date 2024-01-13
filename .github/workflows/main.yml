@@ -21,16 +21,19 @@ jobs:
                docker login -u vaishnaviwohlig -p Dildosti@2512
                docker build -t vaishnaviwohlig/ss2:${{GITHUB.SHA}} .
                docker push vaishnaviwohlig/ss2:${{GITHUB.SHA}}
-
+               
+               git config --global user.email "vaishnavi.korgaonkar@wohlig.com"
+               git config --global user.name "Vaishnavi20011225"
+               
                yq e '.spec.template.spec.containers[0].image = "vaishnaviwohlig/ss2:${{ github.sha }}"' deployment.yaml -i
-               git config user.name "Vaishnavi20011225"
-               git config user.email "vaishnavi.korgaonkar@wohlig.com"
+               
                git pull
                git add .
                git commit -m "image change"
                git status
-               git remote set-url origin https://Vaishnavi20011225:${{ secrets.TOKEN101 }}@github.com/Vaishnavi20011225/ss2.git
+               git remote set-url origin https://Vaishnavi20011225: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@github.com/Vaishnavi20011225/ss2.git
                git remote get-url origin
                git branch --show-current
                git push 
+               git status
 
