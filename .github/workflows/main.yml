@@ -7,6 +7,7 @@ on:
 
 env: 
   GITHUB_TOKEN: ${{ secrets.TOKEN101 }}
+  
 jobs:  
   ss2:
     name: ss2
@@ -24,9 +25,12 @@ jobs:
                yq e '.spec.template.spec.containers[0].image = "vaishnaviwohlig/ss2:${{ github.sha }}"' deployment.yaml -i
                git config user.name "Vaishnavi20011225"
                git config user.email "vaishnavi.korgaonkar@wohlig.com"
-               git remote set-url origin https://Vaishnavi20011225:${{secrets.TOKEN101}}@github.com/Vaishnavi20011225/ss2.git
+               git pull
                git add .
                git commit -m "image change"
                git status
+               git remote set-url origin https://Vaishnavi20011225:${{ secrets.TOKEN101 }}@github.com/Vaishnavi20011225/ss2.git
+               git remote get-url origin
+               git branch --show-current
                git push 
 
