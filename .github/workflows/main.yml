@@ -20,7 +20,7 @@ jobs:
                yq e '.spec.template.spec.containers[0].image = "vaishnaviwohlig/ss2:${{ github.sha }}"' deployment.yaml -i
                git config user.name "Vaishnavi20011225"
                git config user.email "vaishnavi.korgaonkar@wohlig.com"
-               git remote set-url origin https://Vaishnavi20011225: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@github.com/Vaishnavi20011225/ss2
+               git remote set-url origin https://Vaishnavi20011225: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@github.com/Vaishnavi20011225/ss2.git
                git add .
                git commit -m "image change"
                git status
