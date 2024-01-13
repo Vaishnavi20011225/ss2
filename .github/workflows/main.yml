@@ -18,8 +18,8 @@ jobs:
                docker push vaishnaviwohlig/ss2:${{GITHUB.SHA}}
 
                yq e '.spec.template.spec.containers[0].image = "vaishnaviwohlig/ss2:${{ github.sha }}"' deployment.yaml -i
-               git configure user.name "Vaishnavi20011225"
-               git configure user.email "vaishnavi.korgaonkar@wohlig.com"
+               git config user.name "Vaishnavi20011225"
+               git config user.email "vaishnavi.korgaonkar@wohlig.com"
                git add .
                git commit -m "image change"
                git status
