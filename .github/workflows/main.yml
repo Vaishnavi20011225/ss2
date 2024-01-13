@@ -1,39 +1,37 @@
 name: ss2
-on: 
+on:
   push:
-    branches:  
-              - "main"
+    branches:
+      - "main"
 
-
-env: 
+env:
   GITHUB_TOKEN: ${{ secrets.TOKEN102 }}
-  
-jobs:  
+
+jobs:
   ss2:
     name: ss2
     runs-on: ubuntu-latest
-    steps:  
-     - name : checkout
-       uses: actions/checkout@v3
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
 
-     - name: Build and push
-       run: |
-               docker login -u vaishnaviwohlig -p Dildosti@2512
-               docker build -t vaishnaviwohlig/ss2:${{GITHUB.SHA}} .
-               docker push vaishnaviwohlig/ss2:${{GITHUB.SHA}}
-               
-               git config --global user.email "vaishnavi.korgaonkar@wohlig.com"
-               git config --global user.name "Vaishnavi20011225"
-               
-               yq e '.spec.template.spec.containers[0].image = "vaishnaviwohlig/ss2:${{ github.sha }}"' deployment.yaml -i
-               
-               git pull
-               git add .
-               git commit -m "image change"
-               git status
-               git remote set-url origin https://Vaishnavi20011225:${{ secrets.TOKEN102 }}@github.com/Vaishnavi20011225/ss2.git
-               git remote get-url origin
-               git branch --show-current
-               git push origin main
-               git status
+      - name: Build and push
+        run: |
+          docker login -u vaishnaviwohlig -p Dildosti@2512
+          docker build -t vaishnaviwohlig/ss2:${{GITHUB.SHA}} .
+          docker push vaishnaviwohlig/ss2:${{GITHUB.SHA}}
 
+          git config --global user.email "vaishnavi.korgaonkar@wohlig.com"
+          git config --global user.name "Vaishnavi20011225"
+
+          yq e '.spec.template.spec.containers[0].image = "vaishnaviwohlig/ss2:${{ github.sha }}"' deployment.yaml -i
+
+          git pull
+          git add .
+          git commit -m "image change"
+          git status
+          
+          # Use GitHub token for authentication in the Git commands
+          git remote set-url origin https://${{ github.actor }}:${{ secrets.TOKEN102 }}@github.com/${{ github.repository }}.git
+          git push https://Vaishnavi20011225:${{ secrets.TOKEN102 }}@github.com/Vaishnavi20011225/ss2.git main
+          git status
