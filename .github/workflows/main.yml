@@ -26,7 +26,7 @@ jobs:
           git config --global user.name "Vaishnavi20011225"
           git config --global credential.helper store
 
-          yq e '.spec.template.spec.containers[0].image = "vaishnaviwohlig/ss2:${{ github.sha }}"' deployment.yaml -i
+          yq e '.spec.template.spec.containers[0].image = "vaishnaviwohlig/ss2:${{ github.sha }}"' manifests/deployment.yaml -i
 
           git pull
           git add .
