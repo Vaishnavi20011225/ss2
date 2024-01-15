@@ -31,9 +31,11 @@ jobs:
           git commit -m "image change"
           git status
           
-          # Use GitHub token for authentication in the Git commands
           git remote set-url origin https://Vaishnavi20011225:${{ secrets.TOKEN102 }}@github.com/ss2.git
-          git push
+          git remote get-url origin
+          git branch --show-current
+          
+          git push -u origin main 
           # https://Vaishnavi20011225:${{ secrets.TOKEN102 }}@github.com/Vaishnavi20011225/ss2.git main
           # git push https://Vaishnavi20011225:${{ secrets.TOKEN102 }}@github.com/Vaishnavi20011225/ss2.git main
           git status
