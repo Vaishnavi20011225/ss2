@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: ss2-container
-          image: "vaishnaviwohlig/ss2:603a967bc1f8659f49eee4acbee07b47e049a3ad"
+          image: "vaishnaviwohlig/ss2:674adb429eedd0e1e8f395c52eb9d428196b0ceb"
           ports:
             - containerPort: 2000
