@@ -40,7 +40,7 @@ jobs:
           git remote get-url origin
           git branch --show-current
                  
-          git push -u origin main
+          git push -u origin/main main
                 
           git status
    
