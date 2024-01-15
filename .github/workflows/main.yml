@@ -29,12 +29,13 @@ jobs:
           git pull
           git add .
           git commit -m "image change"
-   
-          
           git remote set-url origin https://github.com/Vaishnavi20011225/ss2.git
                  
           git remote get-url origin
           git branch --show-current
           
-          git push -u origin main
+          git push -u https://Vaishnavi20011225:${{ secrets.TOKEN102 }}@github.com/Vaishnavi20011225/ss2.git main
           git status
+   
+          
+          
