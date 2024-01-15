@@ -15,6 +15,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
 
+
       - name: Build and push
         run: |
           docker login -u vaishnaviwohlig -p Dildosti@2512
@@ -23,6 +24,7 @@ jobs:
 
           git config --global user.email "vaishnavi.korgaonkar@wohlig.com"
           git config --global user.name "Vaishnavi20011225"
+          git config --global credential.helper store
 
           yq e '.spec.template.spec.containers[0].image = "vaishnaviwohlig/ss2:${{ github.sha }}"' deployment.yaml -i
 
