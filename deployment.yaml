@@ -15,7 +15,7 @@ spec:
         app: ss2
     spec:
       containers:
-      - name: ss2-container
-        image: vaishnaviwohlig/ss2
-        ports:
-        - containerPort: 2000
+        - name: ss2-container
+          image: vaishnaviwohlig/ss2:ba8fa007968c7c2a146f41863b8dd066c29cdf87
+          ports:
+            - containerPort: 2000
